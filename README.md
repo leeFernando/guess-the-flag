@@ -1,3 +1,7 @@
+# Guess The Flag
+
+Link to the game: https://leefernando.github.io/guess-the-flag/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

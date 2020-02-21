@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import FlagDisplay, { GAMEPHASE } from './FlagDisplay';
+import FlagDisplay, { GAMEPHASE } from './FlagDisplay'
+
 
 export default class App extends Component {
 

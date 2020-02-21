@@ -1,15 +1,21 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class FlagResult extends Component {
   render() {
-    const { win, name, onNext, containerStyle, buttonStyle } = this.props;
-    const view = <h1>{win ? 'You are right!' : 'Too bad..'} The answer is {name}.</h1>;
+    const { win, name, onNext } = this.props;
+    const view = (
+      <h1>
+        {win ? 'You are right!' : 'Too bad..'} The answer is {name}.
+      </h1>
+    );
 
     return (
-      <div style={containerStyle}>
+      <div className='child-container'>
         {view}
-        <button onClick={onNext} style={buttonStyle}>Next</button>
+        <button onClick={onNext} className='child-button'>
+          Next
+        </button>
       </div>
-    )
+    );
   }
 }

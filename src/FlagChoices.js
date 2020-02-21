@@ -1,48 +1,41 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export default class FlagChoices extends Component {
   state = {
-    userChoice: ''
-  }
+    userChoice: '',
+  };
 
-  handleChange = (e) => {
+  handleChange = e => {
     const { name, value } = e.target;
     this.setState({ [name]: Number(value) });
-  }
+  };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.onGuess(this.state.userChoice);
-  }
+  };
 
   render() {
-    const { options, containerStyle, buttonStyle } = this.props;
-
-    //style for radios
-    const radio = {
-      marginLeft: '30px'
-    }
+    const { options } = this.props;
 
     let radios = options.map(({ id, name }, i) => (
-      <section key={i} style={radio}>
-        <input
-          name='userChoice'
-          value={id}
-          type='radio'
-        /> {name}
+      <section key={i} className='radio'>
+        <input id={name} type='radio' name='userChoice' value={id} />
+        <label htmlFor={name}>{name}</label>
       </section>
-    ))
+    ));
 
     return (
       <form
-        style={containerStyle}
-        action=""
+        sty
+        className='child-container'
+        action=''
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
       >
         {radios}
-        <button style={buttonStyle}>Guess</button>
+        <button className='child-button'>Guess</button>
       </form>
-    )
+    );
   }
 }
